@@ -69,6 +69,62 @@
  </div>
 </section>
 
+
+
+<section class="section" id="galeria">
+ <h2 style="color:#0b5cab">Galería</h2>
+
+ <!-- Botones -->
+ <div style="text-align:center; margin-bottom:15px;">
+   <button onclick="prevImg()" style="padding:10px 20px;border:none;background:#0b5cab;color:white;border-radius:8px;cursor:pointer;margin-right:10px;">
+     ◀ Anterior
+   </button>
+   <button onclick="nextImg()" style="padding:10px 20px;border:none;background:#0b5cab;color:white;border-radius:8px;cursor:pointer;">
+     Siguiente ▶
+   </button>
+ </div>
+
+ <!-- Galería dinámica -->
+ <div class="gallery" id="galleryDynamic"></div>
+</section>
+
+<script>
+// Lista dinámica de imágenes
+const fotos = [
+ "panelsolar1.jpeg",
+ "panelsolar2.jpeg",
+ "panelsolar1.jpeg",
+ "panelsolar2.jpeg"
+];
+
+let indexActual = 0;
+
+// Cargar imágenes dinámicamente
+function cargarGaleria() {
+  const contenedor = document.getElementById("galleryDynamic");
+  contenedor.innerHTML = `
+    <img src="${fotos[indexActual]}" onclick="openLightbox(this.src)">
+  `;
+}
+
+// Botón siguiente
+function nextImg() {
+  indexActual = (indexActual + 1) % fotos.length;
+  cargarGaleria();
+}
+
+// Botón anterior
+function prevImg() {
+  indexActual = (indexActual - 1 + fotos.length) % fotos.length;
+  cargarGaleria();
+}
+
+// Inicializar galería
+cargarGaleria();
+</script>
+
+
+ 
 <section class="section" id="galeria">
  <h2 style="color:#0b5cab">Galería</h2>
  <div class="gallery">
