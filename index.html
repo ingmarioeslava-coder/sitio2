@@ -1,189 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Soporte Técnico ME</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<style>
- body{font-family: "Segoe UI", Arial; margin:0; background:#f4f7fb; color:#1a1a1a;}
- header{background:#0b5cab;color:white;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;} 
- nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600;} 
- nav a:hover{color:#aedefc;} 
- .hero{background:#e6f0fa;padding:80px 40px;text-align:center;} 
- .hero h1{font-size:48px;color:#0b5cab;} 
- .hero p{font-size:20px;} 
- .section{padding:60px 40px;} 
- .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;} 
- .card{background:white;border-radius:12px;padding:20px;box-shadow:0 4px 8px rgba(0,0,0,.1);} 
- .card h3{color:#0b5cab;} 
- .gallery{display:flex;flex-wrap:wrap;gap:15px;} 
- .gallery img{width:300px;height:200px;object-fit:cover;border-radius:10px;cursor:pointer;transition:.3s;} 
- .gallery img:hover{transform:scale(1.06);} 
- .lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:10000;} 
- .lightbox img{max-width:80%;border-radius:12px;animation:fade .3s;} 
- @keyframes fade{from{opacity:0}to{opacity:1}} 
- .float{position:fixed;right:20px;z-index:9999;} 
- #whats{bottom:90px;background:#25D366;} 
- #tiktok{bottom:20px;background:black;} 
- .float-btn{color:white;width:55px;height:55px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:26px;box-shadow:0 3px 6px rgba(0,0,0,.3);} 
- .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;} 
- .testimonial{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 8px rgba(0,0,0,.1);} 
- footer{background:#0b5cab;color:white;padding:30px;text-align:center;margin-top:40px;} 
- .form-float{position:fixed;left:20px;bottom:20px;background:white;padding:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,.25);display:none;width:300px;} 
- .form-btn{position:fixed;left:20px;bottom:20px;background:#0b5cab;color:white;padding:14px 18px;border-radius:50px;cursor:pointer;font-weight:600;} 
- .form-float input, .form-float textarea{width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;} 
- .map iframe{width:100%;height:350px;border:0;border-radius:12px;} 
-</style>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soporte Técnico ME - Sistemas Solares & Videovigilancia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
 
-<header>
- <h2>Soporte Técnico ME</h2>
- <nav>
-   <a href="#inicio">Inicio</a>
-   <a href="#servicios">Servicios</a>
-   <a href="#galeria">Galería</a>
-   <a href="#testimonios">Testimonios</a>
-   <a href="#ubicacion">Ubicación</a>
- </nav>
-</header>
+        header {
+            background: #0b3b5c;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
 
-<section class="section" id="misionvision" data-aos="fade-up" style="background:#eaf3fc;padding:60px 40px;">
- 
+        section {
+            padding: 20px;
+        }
 
-<section class="hero" id="inicio" data-aos="fade-up">
- <h1>Soluciones Profesionales en Tecnología, Electricidad y Energía Solar</h1>
- <p>Soporte Técnico, Instalaciones, Seguridad, Electricidad y Sistemas Industriales</p>
-</section>
+        h2 {
+            color: #0b3b5c;
+            text-align: center;
+        }
 
-<section class="section" id="servicios" data-aos="fade-right">
- <h2 style="color:#0b5cab">Nuestros Servicios</h2>
- <div class="services">
-  <div class="card"><h3>Paneles Solares</h3><p>Instalación de sistemas solares On-Grid, Off-Grid e Híbridos.</p></div>
-  <div class="card"><h3>Cámaras de Seguridad</h3><p>Instalación de CCTV IP, HD, NVR, DVR y videovigilancia remota.</p></div>
-  <div class="card"><h3>Electricidad</h3><p>Residencial, comercial e industrial, variadores y arrancadores.</p></div>
-  <div class="card"><h3>Soporte Técnico</h3><p>Reparación de equipos, limpieza, software y redes.</p></div>
-  <div class="card"><h3>Venta de Accesorios</h3><p>Cargadores tipo C, pantallas de celulares y refacciones.</p></div>
- </div>
-</section>
+        /* GALERÍA */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
 
-<section class="section" id="galeria" data-aos="zoom-in">
- <h2 style="color:#0b5cab">Galería de Proyectos</h2>
- <div class="gallery">
-   <img src="panelsolar1.jpeg" onclick="openLightbox(this.src)">
-   <img src="img1.jpg" onclick="openLightbox(this.src)">
-   <img src="img2.jpg" onclick="openLightbox(this.src)">
-   <img src="img3.jpg" onclick="openLightbox(this.src)">
-   <img src="img4.jpg" onclick="openLightbox(this.src)">
-   <img src="img5.jpg" onclick="openLightbox(this.src)">
- </div>
-</section>
+        .galeria img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-<section class="section" id="misionvision" data-aos="fade-up">
- 
+        .galeria img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
 
-<div id="lightbox"" class="lightbox" onclick="closeLightbox()">
- <img id="lb-img">
-</div>
+        /* PRODUCTOS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-<section class="section" id="testimonios" data-aos="fade-left">
- <h2 style="color:#0b5cab">Experiencias de Clientes</h2>
- <div class="testimonials">
-  <div class="testimonial"><p>“Excelente servicio, muy profesionales.”</p><strong>- Juan Pérez</strong></div>
-  <div class="testimonial"><p>“Instalaron mis paneles y ahora pago casi nada de luz.”</p><strong>- María López</strong></div>
-  <div class="testimonial"><p>“Rápidos y confiables. 100% recomendados.”</p><strong>- Carlos Ramírez</strong></div>
- </div>
-</section>
+        .producto {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #0002;
+            text-align: center;
+        }
 
-<section class="section map" id="ubicacion" data-aos="fade-up">
- <h2 style="color:#0b5cab">Ubicación</h2>
- <p>Nos encontramos en El Castillo, Xalapa, Veracruz. Horario: Lunes a Viernes, 9:00 a 13:00 hrs.</p>
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.773497583182!2d-96.8868!3d19.5675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db33c3c0bxxx%3A0x000000!2sEl%20Castillo%2C%20Xalapa!5e0!3m2!1ses!2smx!4v000000" allowfullscreen=""></iframe>
-</section>
+        .producto img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-<div class="float" id="whatsapp-btn" style="bottom:160px;">
-   <a href="https://wa.me/522282572895" target="_blank" class="float-btn" id="whats"><i class="fab fa-whatsapp"></i></a>
-</div>
-<div class="float" id="whatsapp-btn2" style="bottom:220px;">
-   <a href="https://wa.me/522282572895" target="_blank" class="float-btn" id="whats"><i class="fa fa-phone"></i></a>
-</div>
-<div class="float" id="tiktok-btn">
-   <a href="https://www.tiktok.com" target="_blank" class="float-btn" id="tiktok"><i class="fab fa-tiktok"></i></a>
-</div>
+        .btn-comprar {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
 
-<div class="form-btn" onclick="document.getElementById('formBox').style.display='block'">Contacto</div>
-<div class="form-float" id="formBox">
- <h3>Contáctanos</h3>
- <input type="text" placeholder="Nombre" />
- <input type="text" placeholder="Teléfono" />
- <textarea placeholder="Mensaje"></textarea>
- <button style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">Enviar</button>
-</div>
+        .btn-comprar:hover {
+            background: #1da851;
+        }
 
-<footer>
- <p>© 2025 Soporte Técnico ME - Xalapa, Veracruz</p>
-</footer>
+        footer {
+            background: #0b3b5c;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init();
-function openLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
-function closeLightbox(){document.getElementById('lightbox').style.display='none';}
-</script>
-
-  <section id="mision-vision" class="mt-20 p-10 bg-gray-100 rounded-2xl shadow-inner">
-    
-    <!-- Sección de Videovigilancia -->
-    <section id="videovigilancia" class="services-section">
-        <h2>Equipos de Videovigilancia</h2>
-        <p>Conoce nuestros equipos de seguridad: cámaras, kits completos, cableado y accesorios con precios accesibles. Puedes realizar tu pedido directamente por WhatsApp.</p>
-
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="assets/camaras/cam1.jpeg" alt="Cámara Bullet HD" />
-                <h3>Cámara Bullet HD 1080p</h3>
-                <p class="price">$650 MXN</p>
-                <a href="https://wa.me/522282572895?text=Hola,%20quiero%20comprar%20la%20Cámara%20Bullet%20HD%201080p" class="buy-btn">Comprar por WhatsApp</a>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/camaras/cam2.jpeg" alt="Cámara Domo IR" />
-                <h3>Cámara Domo Infrarroja</h3>
-                <p class="price">$720 MXN</p>
-                <a href="https://wa.me/522282572895?text=Hola,%20quiero%20comprar%20la%20Cámara%20Domo%20IR" class="buy-btn">Comprar por WhatsApp</a>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/camaras/kit1.jpeg" alt="Kit de 4 cámaras" />
-                <h3>Kit de 4 Cámaras + DVR</h3>
-                <p class="price">$3,850 MXN</p>
-                <a href="https://wa.me/522282572895?text=Hola,%20quiero%20comprar%20el%20Kit%20de%204%20Cámaras%20con%20DVR" class="buy-btn">Comprar por WhatsApp</a>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/camaras/cable1.jpeg" alt="Cable coaxial 20m" />
-                <h3>Cable Coaxial 20m</h3>
-                <p class="price">$110 MXN</p>
-                <a href="https://wa.me/522282572895?text=Hola,%20quiero%20comprar%20el%20Cable%20Coaxial%20de%2020m" class="buy-btn">Comprar por WhatsApp</a>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/camaras/cargador.jpeg" alt="Cargador 12V 2A" />
-                <h3>Cargador 12V 2A para cámaras</h3>
-                <p class="price">$95 MXN</p>
-                <a href="https://wa.me/522282572895?text=Hola,%20quiero%20comprar%20el%20Cargador%2012V%202A" class="buy-btn">Comprar por WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-  <section id="mision-vision" class="mt-20 p-10 bg-gray-100 rounded-2xl shadow-inner">
-    <h2 class="text-3xl font-bold mb-4 text-center">Misión</h2>
-    <p class="mb-6 text-center max-w-3xl mx-auto">Brindar soluciones de energía solar, seguridad y electricidad con calidad profesional, acercando tecnología confiable a nuestros clientes a través de un servicio honesto, seguro y eficiente.</p>
-
-    <h2 class="text-3xl font-bold mb-4 text-center">Visión</h2>
-    <p class="mb-10 text-center max-w-3xl mx-auto">Ser la empresa xalapeña líder en innovación tecnológica, impulsando el uso de energías limpias y soluciones inteligentes, fundamentada en la experiencia y profesionalismo de su fundador, el Ing. Mario Eslava, Ingeniero en Instrumentación Electrónica egresado de la Universidad Veracruzana.</p>
-  </section>
-</body>
-</html>
+        /* BOTONES FLOTANTES UNIVERSALES */
+        .btn-float {
+            posit
