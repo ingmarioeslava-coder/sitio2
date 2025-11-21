@@ -7,6 +7,23 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+
+<script>
+function sendProduct(nombre, precio, imagen){
+    let mensaje = 
+        `Hola, me interesa el producto:%0A` +
+        `*${nombre}*%0A` +
+        `Precio: $${precio}%0A` +
+        `Imagen: ${imagen}%0A` +
+        `¿Está disponible?`;
+
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
+}
+</script>
+
+
+
+ 
 <style>
  body{font-family:"Segoe UI",Arial;margin:0;background:#f4f7fb;color:#1a1a1a;}
  header{background:#0b5cab;color:white;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;} 
@@ -202,6 +219,77 @@
  </div>
 </section>
 
+
+
+<section class="section" id="videovigilancia">
+ <h2 style="color:#0b5cab">Videovigilancia</h2>
+
+ <div class="product-grid">
+
+  <div class="product-card">
+    <img src="assets/camaras/cam1.jpeg">
+    <h3>Cámara Bullet</h3>
+    <p class="price">$650</p>
+    <a class="buy-btn" 
+       href="#" 
+       onclick="sendProduct('Cámara Bullet', '650', 'assets/camaras/cam1.jpeg')">
+       Comprar
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="assets/camaras/cam1.jpeg">
+    <h3>Cámara Bullet</h3>
+    <p class="price">$650</p>
+    <a class="buy-btn" 
+       href="#" 
+       onclick="sendProduct('Cámara Bullet', '650', 'assets/camaras/cam1.jpeg')">
+       Comprar
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="assets/camaras/cam1.jpeg">
+    <h3>Cámara Bullet</h3>
+    <p class="price">$650</p>
+    <a class="buy-btn" 
+       href="#" 
+       onclick="sendProduct('Cámara Bullet', '650', 'assets/camaras/cam1.jpeg')">
+       Comprar
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="assets/camaras/cam1.jpeg">
+    <h3>Cámara Bullet</h3>
+    <p class="price">$650</p>
+    <a class="buy-btn" 
+       href="#" 
+       onclick="sendProduct('Cámara Bullet', '650', 'assets/camaras/cam1.jpeg')">
+       Comprar
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="assets/camaras/kit1.jpeg">
+    <h3>Kit 4 cámaras</h3>
+    <p class="price">$3850</p>
+    <a class="buy-btn" 
+       href="#" 
+       onclick="sendProduct('Kit 4 cámaras', '3850', 'assets/camaras/kit1.jpeg')">
+       Comprar
+    </a>
+  </div>
+
+ </div>
+</section>
+
+
+ 
+ 
+
+
+ 
 
 <section id="mision-vision" class="section">
  <h2 style="text-align:center;color:#0b5cab;">Misión</h2>
