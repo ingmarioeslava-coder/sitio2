@@ -321,6 +321,84 @@ function sendProduct(nombre, precio, imagen){
      <i class="fab fa-whatsapp"></i>
   </a>
 </div>    
+
+<!-- Botón flotante WhatsApp con formulario y ubicación -->
+<style>
+#wa-form{
+position:fixed;left:20px;bottom:100px;width:300px;background:#fff;padding:20px;border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.25);display:none;z-index:9999;
+}
+#wa-form input,#wa-form textarea{
+width:100%;padding:10px;margin:6px 0;border-radius:6px;border:1px solid #ccc;
+}
+#wa-open-btn{
+position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25D366;
+display:flex;justify-content:center;align-items:center;color:white;font-size:30px;cursor:pointer;
+box-shadow:0 3px 6px rgba(0,0,0,.3);z-index:9999;
+}
+</style>
+
+
+<div id="wa-open-btn" onclick="openWAForm()">
+<i class="fab fa-whatsapp"></i>
+</div>
+
+
+<div id="wa-form">
+<h3>Contacto por WhatsApp</h3>
+<input id="wa-nombre" type="text" placeholder="Tu nombre">
+<input id="wa-tel" type="text" placeholder="Tu teléfono">
+<textarea id="wa-msg" placeholder="Escribe tu mensaje"></textarea>
+<button onclick="enviarWA()" style="width:100%;padding:10px;background:#0b5cab;color:#fff;border:none;border-radius:6px;">Enviar</button>
+<button onclick="closeWAForm()" style="margin-top:8px;width:100%;padding:10px;background:#aaa;color:#fff;border:none;border-radius:6px;">Cerrar</button>
+</div>
+
+
+<script>
+let ubicacionLat = null;
+let ubicacionLng = null;
+
+
+function openWAForm(){
+document.getElementById("wa-form").style.display = "block";
+obtenerUbicacion();
+}
+function closeWAForm(){
+document.getElementById("wa-form").style.display = "none";
+}
+
+
+function obtenerUbicacion(){
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(function(pos){
+ubicacionLat = pos.coords.latitude;
+ubicacionLng = pos.coords.longitude;
+});
+}
+}
+
+
+function enviarWA(){
+let nombre = document.getElementById("wa-nombre").value;
+let tel = document.getElementById("wa-tel").value;
+let msg = document.getElementById("wa-msg").value;
+let pagina = window.location.pathname;
+
+
+let texto = `Hola, mi nombre es ${nombre}.%0A`+
+`Teléfono: ${tel}.%0A`+
+`Mensaje: ${msg}.%0A`+
+`Página: ${pagina}.%0A`;
+
+
+if(ubicacionLat && ubicacionLng){
+texto += `Ubicación: https://maps.google.com/?q=${ubicacionLat},${ubicacionLng}`;
+} else {
+texto += `Ubicación no proporcionada.`;
+}
+
+
+    
 <div class="float" style="bottom:90px;"><a href="tel:2282572895" class="float-btn" id="call"><i class="fa fa-phone"></i></a></div>
 <div class="float" style="bottom:20px;"><a href="https://tiktok.com" class="float-btn" id="tiktok"><i class="fab fa-tiktok"></i></a></div>
 
