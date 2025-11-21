@@ -7,6 +7,20 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    
+<script>
+function sendWhatsappMessage(){
+    let mensaje = 
+        `Hola, estoy interesado en solicitar información sobre sus servicios:%0A` +
+        `- Paneles solares%0A` +
+        `- Videovigilancia%0A` +
+        `- Electricidad%0A` +
+        `- Soporte técnico%0A%0A` +
+        `¿Me podría brindar más detalles?`;
+
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
+}
+</script>
 
 <script>
 function sendProduct(nombre, precio, imagen){
@@ -301,7 +315,12 @@ function sendProduct(nombre, precio, imagen){
 </section>
 
 <!-- BOTONES FLOTANTES -->
-<div class="float" style="bottom:160px;"><a href="https://wa.me/522282572895" class="float-btn" id="whats"><i class="fab fa-whatsapp"></i></a></div>
+
+<div class="float" style="bottom:160px;">
+  <a href="#" class="float-btn" id="whats" onclick="sendWhatsappMessage()">
+     <i class="fab fa-whatsapp"></i>
+  </a>
+</div>    
 <div class="float" style="bottom:90px;"><a href="tel:2282572895" class="float-btn" id="call"><i class="fa fa-phone"></i></a></div>
 <div class="float" style="bottom:20px;"><a href="https://tiktok.com" class="float-btn" id="tiktok"><i class="fab fa-tiktok"></i></a></div>
 
