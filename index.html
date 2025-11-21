@@ -70,22 +70,26 @@
 </section>
 
 
-
 <section class="section" id="galeria">
- <h2 style="color:#0b5cab">Galería</h2>
+ <h2 style="color:#0b5cab; text-align:center;">Galería</h2>
 
  <!-- Botones -->
- <div style="text-align:center; margin-bottom:15px;">
-   <button onclick="prevImg()" style="padding:10px 20px;border:none;background:#0b5cab;color:white;border-radius:8px;cursor:pointer;margin-right:10px;">
+ <div style="text-align:center; margin-bottom:20px;">
+   <button onclick="prevImg()" 
+     style="padding:12px 25px; border:none; background:#0b5cab; color:white; border-radius:8px; cursor:pointer; margin-right:15px; font-size:16px;">
      ◀ Anterior
    </button>
-   <button onclick="nextImg()" style="padding:10px 20px;border:none;background:#0b5cab;color:white;border-radius:8px;cursor:pointer;">
+
+   <button onclick="nextImg()" 
+     style="padding:12px 25px; border:none; background:#0b5cab; color:white; border-radius:8px; cursor:pointer; font-size:16px;">
      Siguiente ▶
    </button>
  </div>
 
- <!-- Galería dinámica -->
- <div class="gallery" id="galleryDynamic"></div>
+ <!-- CONTENEDOR CENTRADO -->
+ <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+   <div id="galleryDynamic" style="text-align:center;"></div>
+ </div>
 </section>
 
 <script>
@@ -99,29 +103,37 @@ const fotos = [
 
 let indexActual = 0;
 
-// Cargar imágenes dinámicamente
+// CARGA DINÁMICA
 function cargarGaleria() {
   const contenedor = document.getElementById("galleryDynamic");
   contenedor.innerHTML = `
-    <img src="${fotos[indexActual]}" onclick="openLightbox(this.src)">
+    <img src="${fotos[indexActual]}" 
+         onclick="openLightbox(this.src)"
+         style="width:700px; height:450px; object-fit:cover; border-radius:15px; cursor:pointer; box-shadow:0 6px 15px rgba(0,0,0,.3); transition:.3s;">
   `;
 }
 
-// Botón siguiente
+// SIGUIENTE
 function nextImg() {
   indexActual = (indexActual + 1) % fotos.length;
   cargarGaleria();
 }
 
-// Botón anterior
+// ANTERIOR
 function prevImg() {
   indexActual = (indexActual - 1 + fotos.length) % fotos.length;
   cargarGaleria();
 }
 
-// Inicializar galería
+// INICIALIZAR
 cargarGaleria();
 </script>
+
+
+
+
+
+ 
 
 
  
