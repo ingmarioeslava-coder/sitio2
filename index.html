@@ -8,6 +8,35 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <script>
+function enviarFormulario() {
+    const nombre = document.getElementById('formNombre').value;
+    const telefono = document.getElementById('formTelefono').value;
+    const mensaje = document.getElementById('formMensaje').value;
+    const ubicacion = document.getElementById('formUbicacion').value;
+
+    if (!nombre || !telefono || !mensaje) {
+        alert('Por favor completa todos los campos obligatorios.');
+        return;
+    }
+
+    const asunto = encodeURIComponent("Contacto desde sitio web - Soporte Técnico ME");
+    const cuerpo = encodeURIComponent(
+        `Nombre: ${nombre}\n` +
+        `Teléfono: ${telefono}\n` +
+        `Ubicación: ${ubicacion}\n` +
+        `Mensaje: ${mensaje}`
+    );
+
+    window.location.href = `mailto:mesoportetecnico8@gmail.com?subject=${asunto}&body=${cuerpo}`;
+
+    // Opcional: limpiar el formulario
+    document.getElementById('formBox').reset();
+    document.getElementById('formBox').style.display = 'none';
+}
+</script>
+
+    
+<script>
 function sendWhatsappMessage(){
     let mensaje = 
         `Hola, estoy interesado en solicitar información sobre sus servicios:%0A` +
@@ -289,55 +318,17 @@ Fundada en diciembre de 2024 por el Ing. Mario Eslava, ingeniero en Instrumentac
 <div class="form-btn" onclick="document.getElementById('formBox').style.display='block'">Contacto</div>
 
 
-
-<!-- BOTÓN CONTACTO -->
-<div class="form-btn" id="contactBtn">Contacto</div>
-
-<!-- FORMULARIO FLOTANTE -->
 <div class="form-float" id="formBox">
-  <h3>Contáctanos</h3>
-  <input type="text" id="nombre" placeholder="Nombre" />
-  <input type="text" id="telefono" placeholder="Teléfono" />
-  <input type="text" id="ubicacion" placeholder="Ubicación" />
-  <textarea id="mensaje" placeholder="Mensaje"></textarea>
-  <button id="sendWhatsApp" style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">Enviar</button>
-  <button id="closeForm" style="margin-top:10px;background:#ccc;color:#333;padding:8px;width:100%;border:none;border-radius:6px;cursor:pointer;">Cerrar</button>
+ <h3>Contáctanos</h3>
+ <input type="text" id="formNombre" placeholder="Nombre" required />
+ <input type="text" id="formTelefono" placeholder="Teléfono" required />
+ <input type="text" id="formUbicacion" placeholder="Ubicación" />
+ <textarea id="formMensaje" placeholder="Mensaje" required></textarea>
+ <button type="button" onclick="enviarFormulario()" 
+         style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">
+         Enviar
+ </button>
 </div>
-
-<script>
-const contactBtn = document.getElementById("contactBtn");
-const formBox = document.getElementById("formBox");
-const closeForm = document.getElementById("closeForm");
-const sendWhatsApp = document.getElementById("sendWhatsApp");
-
-// Abrir formulario
-contactBtn.addEventListener("click", () => {
-  formBox.style.display = "block";
-});
-
-// Cerrar formulario
-closeForm.addEventListener("click", () => {
-  formBox.style.display = "none";
-});
-
-// Enviar datos a WhatsApp
-sendWhatsApp.addEventListener("click", () => {
-  const nombre = document.getElementById("nombre").value || "Sin nombre";
-  const telefono = document.getElementById("telefono").value || "Sin teléfono";
-  const ubicacion = document.getElementById("ubicacion").value || "Sin ubicación";
-  const mensaje = document.getElementById("mensaje").value || "Sin mensaje";
-
-  const mensajeWhats = 
-    `Hola, deseo contactarlos.%0A` +
-    `Nombre: ${nombre}%0A` +
-    `Teléfono: ${telefono}%0A` +
-    `Ubicación: ${ubicacion}%0A` +
-    `Mensaje: ${mensaje}`;
-
-  window.open(`https://wa.me/522282572895?text=${mensajeWhats}`, "_blank");
-});
-</script>
-    
 
 
     
