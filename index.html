@@ -7,34 +7,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-<script>
-function enviarFormulario() {
-    const nombre = document.getElementById('formNombre').value;
-    const telefono = document.getElementById('formTelefono').value;
-    const mensaje = document.getElementById('formMensaje').value;
-    const ubicacion = document.getElementById('formUbicacion').value;
-
-    if (!nombre || !telefono || !mensaje) {
-        alert('Por favor completa todos los campos obligatorios.');
-        return;
-    }
-
-    const asunto = encodeURIComponent("Contacto desde sitio web - Soporte Técnico ME");
-    const cuerpo = encodeURIComponent(
-        `Nombre: ${nombre}\n` +
-        `Teléfono: ${telefono}\n` +
-        `Ubicación: ${ubicacion}\n` +
-        `Mensaje: ${mensaje}`
-    );
-
-    window.location.href = `mailto:mesoportetecnico8@gmail.com?subject=${asunto}&body=${cuerpo}`;
-
-    // Opcional: limpiar el formulario
-    document.getElementById('formBox').reset();
-    document.getElementById('formBox').style.display = 'none';
-}
-</script>
-
     
 <script>
 function sendWhatsappMessage(){
@@ -318,17 +290,6 @@ Fundada en diciembre de 2024 por el Ing. Mario Eslava, ingeniero en Instrumentac
 <div class="form-btn" onclick="document.getElementById('formBox').style.display='block'">Contacto</div>
 
 
-<div class="form-float" id="formBox">
- <h3>Contáctanos</h3>
- <input type="text" id="formNombre" placeholder="Nombre" required />
- <input type="text" id="formTelefono" placeholder="Teléfono" required />
- <input type="text" id="formUbicacion" placeholder="Ubicación" />
- <textarea id="formMensaje" placeholder="Mensaje" required></textarea>
- <button type="button" onclick="enviarFormulario()" 
-         style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">
-         Enviar
- </button>
-</div>
 
 
     
