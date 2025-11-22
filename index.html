@@ -289,35 +289,55 @@ Fundada en diciembre de 2024 por el Ing. Mario Eslava, ingeniero en Instrumentac
 <div class="form-btn" onclick="document.getElementById('formBox').style.display='block'">Contacto</div>
 
 
+
 <!-- BOTÓN CONTACTO -->
 <div class="form-btn" id="contactBtn">Contacto</div>
 
 <!-- FORMULARIO FLOTANTE -->
 <div class="form-float" id="formBox">
   <h3>Contáctanos</h3>
-  <input type="text" placeholder="Nombre" />
-  <input type="text" placeholder="Teléfono" />
-  <input type="text" placeholder="Ubicación" /> <!-- NUEVO CAMPO -->
-  <textarea placeholder="Mensaje"></textarea>
-  <button style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">Enviar</button>
+  <input type="text" id="nombre" placeholder="Nombre" />
+  <input type="text" id="telefono" placeholder="Teléfono" />
+  <input type="text" id="ubicacion" placeholder="Ubicación" />
+  <textarea id="mensaje" placeholder="Mensaje"></textarea>
+  <button id="sendWhatsApp" style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">Enviar</button>
   <button id="closeForm" style="margin-top:10px;background:#ccc;color:#333;padding:8px;width:100%;border:none;border-radius:6px;cursor:pointer;">Cerrar</button>
 </div>
 
 <script>
-  const contactBtn = document.getElementById("contactBtn");
-  const formBox = document.getElementById("formBox");
-  const closeForm = document.getElementById("closeForm");
+const contactBtn = document.getElementById("contactBtn");
+const formBox = document.getElementById("formBox");
+const closeForm = document.getElementById("closeForm");
+const sendWhatsApp = document.getElementById("sendWhatsApp");
 
-  // Abrir formulario
-  contactBtn.addEventListener("click", () => {
-    formBox.style.display = "block";
-  });
+// Abrir formulario
+contactBtn.addEventListener("click", () => {
+  formBox.style.display = "block";
+});
 
-  // Cerrar formulario
-  closeForm.addEventListener("click", () => {
-    formBox.style.display = "none";
-  });
+// Cerrar formulario
+closeForm.addEventListener("click", () => {
+  formBox.style.display = "none";
+});
+
+// Enviar datos a WhatsApp
+sendWhatsApp.addEventListener("click", () => {
+  const nombre = document.getElementById("nombre").value || "Sin nombre";
+  const telefono = document.getElementById("telefono").value || "Sin teléfono";
+  const ubicacion = document.getElementById("ubicacion").value || "Sin ubicación";
+  const mensaje = document.getElementById("mensaje").value || "Sin mensaje";
+
+  const mensajeWhats = 
+    `Hola, deseo contactarlos.%0A` +
+    `Nombre: ${nombre}%0A` +
+    `Teléfono: ${telefono}%0A` +
+    `Ubicación: ${ubicacion}%0A` +
+    `Mensaje: ${mensaje}`;
+
+  window.open(`https://wa.me/522282572895?text=${mensajeWhats}`, "_blank");
+});
 </script>
+    
 
 
     
