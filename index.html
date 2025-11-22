@@ -297,6 +297,7 @@ Fundada en diciembre de 2024 por el Ing. Mario Eslava, ingeniero en Instrumentac
   <h3>Contáctanos</h3>
   <input type="text" placeholder="Nombre" />
   <input type="text" placeholder="Teléfono" />
+  <input type="text" placeholder="Ubicación" /> <!-- NUEVO CAMPO -->
   <textarea placeholder="Mensaje"></textarea>
   <button style="background:#0b5cab;color:white;padding:10px;width:100%;border:none;border-radius:6px;">Enviar</button>
   <button id="closeForm" style="margin-top:10px;background:#ccc;color:#333;padding:8px;width:100%;border:none;border-radius:6px;cursor:pointer;">Cerrar</button>
@@ -307,10 +308,12 @@ Fundada en diciembre de 2024 por el Ing. Mario Eslava, ingeniero en Instrumentac
   const formBox = document.getElementById("formBox");
   const closeForm = document.getElementById("closeForm");
 
+  // Abrir formulario
   contactBtn.addEventListener("click", () => {
     formBox.style.display = "block";
   });
 
+  // Cerrar formulario
   closeForm.addEventListener("click", () => {
     formBox.style.display = "none";
   });
