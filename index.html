@@ -7,6 +7,20 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+
+    
+<div style="font-family: Arial; font-size: 16px;">
+  👁️ Visitas: <span id="visitas">0</span>
+</div>
+
+<script>
+fetch('https://api.countapi.xyz/hit/marioeslava.github.io/soporte-tecnico-me')
+  .then(res => res.json())
+  .then(res => document.getElementById('visitas').textContent = res.value);
+</script>
+
+
+
     
 <script>
 function sendWhatsappMessage(){
@@ -209,7 +223,7 @@ img{max-width:100%;height:auto;}
 
 <!-- ================= PRODUCTOS ================= -->
 <section class="section" id="videovigilancia">
- <h2 style="color:#0b5cab">Videovigilancia</h2>
+ <h2 style="color:#0b5cab">PRODUCTOS</h2>
 
  <div class="product-grid">
 
