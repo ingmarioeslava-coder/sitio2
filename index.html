@@ -9,19 +9,7 @@
 
 
     
-<div style="font-family: Arial; font-size: 16px;">
-  👁️ Visitas: <span id="visitas">0</span>
-</div>
-
-<script>
-fetch('https://api.countapi.xyz/hit/marioeslava.github.io/soporte-tecnico-me')
-  .then(res => res.json())
-  .then(res => document.getElementById('visitas').textContent = res.value);
-</script>
-
-
-
-    
+   
 <script>
 function sendWhatsappMessage(){
     let mensaje = 
@@ -334,6 +322,22 @@ document.getElementById("prev").onclick=function(){
 }
 </script>
 
+
+
+<div style="font-family: Arial; font-size: 16px;">
+  👁️ Visitas: <span id="visitas">999</span>
+</div>
+
+<script>
+fetch('https://api.countapi.xyz/hit/marioeslava.github.io/soporte-tecnico-me')
+  .then(res => res.json())
+  .then(res => document.getElementById('visitas').textContent = res.value);
+</script>
+
+    
+
+
+    
 </body>
 </html>
 
