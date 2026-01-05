@@ -238,11 +238,11 @@ img{max-width:100%;height:auto;}
   </div>
      
   <div class="product-card">
-    <img src="kitcamaras.jpg">
+    <img src="kitcamaras.jpeg">
     <h3>kit de Camaras de Seguridad, 5 MP, 4 Camaras, 1 DVR con Disco de 500 Gb</h3>
     <p class="price">$2000</p>
     <a class="buy-btn" href="#" 
-       onclick="sendProduct('Kit Camaras', '2000', 'kitcamaras.jpg')">Comprar</a>
+       onclick="sendProduct('Kit Camaras', '2000', 'kitcamaras.jpeg')">Comprar</a>
   </div>
 
   <div class="product-card">
@@ -324,14 +324,20 @@ document.getElementById("prev").onclick=function(){
 
 
 
-<div style="font-family: Arial; font-size: 16px;">
-  👁️ Visitas: <span id="visitas">999</span>
-</div>
+<!-- CONTADOR DE VISITAS -->
+<p style="font-size:16px;">
+  👁️ Visitas: <span id="visitas">0</span>
+</p>
 
 <script>
-fetch('https://api.countapi.xyz/hit/marioeslava.github.io/soporte-tecnico-me')
-  .then(res => res.json())
-  .then(res => document.getElementById('visitas').textContent = res.value);
+fetch('https://api.countapi.xyz/hit/USUARIO.github.io/REPOSITORIO')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitas').textContent = data.value;
+  })
+  .catch(error => {
+    console.error('Error contador:', error);
+  });
 </script>
 
     
