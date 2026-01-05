@@ -323,20 +323,20 @@ document.getElementById("prev").onclick=function(){
 </script>
 
 
-
 <!-- CONTADOR DE VISITAS -->
-<p style="font-size:16px;">
-  👁️ Visitas: <span id="visitas">0</span>
+<p style="font-size: 18px; font-family: Arial, sans-serif;">
+  👁️ Visitas: <span id="visitas">Cargando...</span>
 </p>
 
 <script>
-fetch('https://api.countapi.xyz/hit/marioeslava.github.io/soporte-tecnico-me')
+fetch('https://api.countapi.xyz/hit/www.soportetecnicome.com.mx/visitas')
   .then(response => response.json())
   .then(data => {
     document.getElementById('visitas').textContent = data.value;
   })
   .catch(error => {
-    console.error('Error contador:', error);
+    console.error('Error al cargar el contador:', error);
+    document.getElementById('visitas').textContent = 'Error';
   });
 </script>
 
