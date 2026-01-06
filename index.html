@@ -323,22 +323,47 @@ document.getElementById("prev").onclick=function(){
 </script>
 
 
-<!-- CONTADOR DE VISITAS -->
-<p style="font-size: 18px; font-family: Arial, sans-serif;">
-  👁️ Visitas: <span id="visitas">Cargando...</span>
-</p>
+
+
+<!-- CONTADOR DE VISITAS MODERNO -->
+<style>
+.contador-visitas {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.contador-visitas span {
+  font-weight: bold;
+  font-size: 20px;
+}
+</style>
+
+<div class="contador-visitas">
+  👁️ Visitas
+  <span id="contador-visitas">0</span>
+</div>
 
 <script>
-fetch('https://api.countapi.xyz/hit/www.soportetecnicome.com.mx/visitas')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('visitas').textContent = data.value;
-  })
-  .catch(error => {
-    console.error('Error al cargar el contador:', error);
-    document.getElementById('visitas').textContent = 'Error';
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://api.countapi.xyz/hit/www.soportetecnicome.com.mx/visitas")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("contador-visitas").textContent = data.value;
+    })
+    .catch(error => {
+      console.error("Error en contador:", error);
+    });
+});
 </script>
+
 
     
 
