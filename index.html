@@ -8,6 +8,37 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 
+<p>Visitas: <span id="visitas">...</span></p>
+<script>
+(function () {
+  const span = document.getElementById("visitas");
+
+  if (!span) {
+    console.error("No existe el elemento #visitas");
+    return;
+  }
+
+  const key = "soportetecnicome-visitas";
+
+  fetch("https://api.countapi.xyz/hit/" + key)
+    .then(r => r.json())
+    .then(d => {
+      if (typeof d.value === "number") {
+        span.textContent = d.value;
+      } else {
+        span.textContent = "N/D";
+        console.error("Respuesta inválida:", d);
+      }
+    })
+    .catch(e => {
+      span.textContent = "Error";
+      console.error("Error contador:", e);
+    });
+})();
+</script>
+
+
+    
     
    
 <script>
@@ -323,37 +354,6 @@ document.getElementById("prev").onclick=function(){
 </script>
 
     
-<p>Visitas: <span id="visitas">...</span></p>
-<script>
-(function () {
-  const span = document.getElementById("visitas");
-
-  if (!span) {
-    console.error("No existe el elemento #visitas");
-    return;
-  }
-
-  const key = "soportetecnicome-visitas";
-
-  fetch("https://api.countapi.xyz/hit/" + key)
-    .then(r => r.json())
-    .then(d => {
-      if (typeof d.value === "number") {
-        span.textContent = d.value;
-      } else {
-        span.textContent = "N/D";
-        console.error("Respuesta inválida:", d);
-      }
-    })
-    .catch(e => {
-      span.textContent = "Error";
-      console.error("Error contador:", e);
-    });
-})();
-</script>
-
-
-
 
     
 
