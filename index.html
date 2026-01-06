@@ -324,45 +324,77 @@ document.getElementById("prev").onclick=function(){
 
 
 
-
-<!-- CONTADOR DE VISITAS MODERNO -->
+/* CONTADOR DE VISITAS SEGURO */
 <style>
-.contador-visitas {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 18px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+#contador-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #ffffff;
   font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 16px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 9999;
+  font-size: 15px;
 }
 
-.contador-visitas span {
+#contador-box span {
+  font-size: 22px;
   font-weight: bold;
-  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+#contador-error {
+  font-size: 12px;
+  color: #ffcccc;
+  margin-top: 4px;
+  display: none;
 }
 </style>
 
-<div class="contador-visitas">
+<div id="contador-box">
   👁️ Visitas
-  <span id="contador-visitas">0</span>
+  <span id="contador-num">--</span>
+  <div id="contador-error"></div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://api.countapi.xyz/hit/www.soportetecnicome.com.mx/visitas")
-    .then(response => response.json())
+(function () {
+  const contadorNum = document.getElementById("contador-num");
+  const contadorError = document.getElementById("contador-error");
+
+  if (!contadorNum) {
+    console.error("No se encontró el contenedor del contador");
+    return;
+  }
+
+  const endpoint = "https://api.countapi.xyz/hit/www.soportetecnicome.com.mx/visitas";
+
+  fetch(endpoint)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Respuesta HTTP " + response.status);
+      }
+      return response.json();
+    })
     .then(data => {
-      document.getElementById("contador-visitas").textContent = data.value;
+      if (typeof data.value !== "number") {
+        throw new Error("Respuesta inválida de CountAPI");
+      }
+      contadorNum.textContent = data.value;
     })
     .catch(error => {
-      console.error("Error en contador:", error);
+      console.error("Contador de visitas:", error);
+      contadorNum.textContent = "—";
+      contadorError.style.display = "block";
+      contadorError.textContent = "Error al cargar visitas";
     });
-});
+})();
 </script>
+
 
 
     
