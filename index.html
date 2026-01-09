@@ -324,6 +324,38 @@ document.getElementById("prev").onclick=function(){
 </script>
 
     
+<p>Visitas: <span id="visitas">cargando...</span></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.getElementById("visitas");
+
+  try {
+    fetch("https://api.countapi.xyz/hit/soportetecnicome/contador")
+      .then(function (res) {
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+        return res.json();
+      })
+      .then(function (data) {
+        if (typeof data.value === "number") {
+          el.textContent = data.value;
+        } else {
+          el.textContent = "N/D";
+          console.error("Respuesta inválida:", data);
+        }
+      })
+      .catch(function (err) {
+        el.textContent = "error";
+        console.error("Error en fetch:", err);
+      });
+  } catch (e) {
+    el.textContent = "error";
+    console.error("Error JS:", e);
+  }
+});
+</script>
 
     
 
