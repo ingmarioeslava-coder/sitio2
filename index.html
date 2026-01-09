@@ -325,14 +325,34 @@ document.getElementById("prev").onclick=function(){
 
 
 
-<p>
-  Visitas:
-  <img
-    src="https://www.websiteout.net/contador.php?contar=soportetecnicome.com.mx"
-    alt="contador de visitas"
-    style="width:auto; height:50px;"
-  >
-</p>
+<div style="text-align:center; margin:20px 0; font-size:18px;">
+  <strong>Visitas:</strong>
+  <span id="contador">0</span>
+</div>
+
+
+ <script>
+(function () {
+  let visitas;
+
+  if (typeof(Storage) !== "undefined") {
+    visitas = localStorage.getItem("contador_visitas");
+
+    if (visitas === null) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+
+    localStorage.setItem("contador_visitas", visitas);
+    document.getElementById("contador").textContent = visitas;
+
+  } else {
+    document.getElementById("contador").textContent = "Error";
+  }
+})();
+</script>
+
 
 
     
