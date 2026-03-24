@@ -342,6 +342,47 @@ img{max-width:100%;height:auto;}
 </div>
 
 
+<!-- Enlace en tu Footer -->
+<footer style="text-align: center; padding: 25px; background: #2c3e50; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <p>© 2026 SOPORTE TECNICO ME | Xalapa, Ver. <br>
+       <a href="javascript:void(0)" onclick="abrirLegal()" style="color: #3498db; text-decoration: none; font-weight: bold;">Aviso de Privacidad y Garantías</a>
+    </p>
+</footer>
+
+<!-- Ventana Emergente Legal -->
+<div id="modalLegal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); backdrop-filter: blur(5px);">
+    <div style="background:#fff; margin:5% auto; padding:30px; width:85%; max-width:650px; border-radius:12px; font-family: sans-serif; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <span onclick="cerrarLegal()" style="float:right; font-size:30px; cursor:pointer; color:#999;">&times;</span>
+        <h2 style="color:#2c3e50; border-bottom: 2px solid #3498db; padding-bottom:10px;">Información Legal y Garantías</h2>
+        
+        <div style="height: 350px; overflow-y: auto; padding-right: 10px; color: #444; font-size: 14px; line-height: 1.6;">
+            <h4>1. Protección de Datos</h4>
+            <p>SOPORTE TECNICO ME (Xalapa, Ver.) utiliza sus datos personales exclusivamente para el servicio técnico solicitado y facturación, conforme a la Ley Mexicana.</p>
+            
+            <h4 style="color:#e67e22;">2. Certificación de Garantía y Calidad</h4>
+            <p>Nuestra Dirección de Ingeniería certifica:</p>
+            <ul style="background: #f9f9f9; padding: 15px 35px; border-radius: 8px;">
+                <li><strong>Mano de Obra:</strong> Garantía de 90 días en ejecución especializada.</li>
+                <li><strong>Componentes:</strong> Sujetos a políticas del fabricante original.</li>
+                <li><strong>Exclusiones:</strong> No cubre siniestros, variaciones de voltaje o manipulación externa.</li>
+            </ul>
+
+            <h4>3. Responsabilidad de Datos</h4>
+            <p style="background: #fff3cd; padding: 10px; border-left: 4px solid #ffc107;">
+                <strong>IMPORTANTE:</strong> El cliente es responsable del respaldo de su información antes de la entrega del equipo.
+            </p>
+        </div>
+        
+        <div style="text-align:center; margin-top:20px;">
+            <button onclick="cerrarLegal()" style="background:#2c3e50; color:white; border:none; padding:12px 30px; border-radius:6px; cursor:pointer; font-weight:bold;">Aceptar y Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function abrirLegal() { document.getElementById('modalLegal').style.display = 'block'; }
+    function cerrarLegal() { document.getElementById('modalLegal').style.display = 'none'; }
+</script>
 
 
 
