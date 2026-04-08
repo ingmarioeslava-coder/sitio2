@@ -77,6 +77,22 @@ function sendProduct(nombre, precio, imagen){
 
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
+
+function sendElectricidad() {
+    let mensaje = encodeURIComponent(
+        "¡Hola! Solicito información o cotización para Servicios Eléctricos Profesionales. ⚡🏠\n\n" +
+        "Detalles de mi solicitud:\n" +
+        "- Tipo de servicio: [ Ej: Promoción $250 / Instalación 220V / Motores / Mantenimiento ]\n" +
+        "- Problema o trabajo a realizar: [ Escribe aquí brevemente ]\n" +
+        "- Ubicación/Zona: [ Escribe aquí ]\n" +
+        "- Tipo de inmueble: [ Domicilio / Comercio / Industria ]\n\n" +
+        "Quedo a la espera de su respuesta para agendar la visita."
+    );
+
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
+}
+
+
  
 </script>
 
@@ -333,7 +349,7 @@ img{max-width:100%;height:auto;}
              <p>No permitas que la inseguridad te quite el sueño. En Soporte Técnico ME protegemos lo que más quieres con soluciones al alcance de tu bolsillo.</p>
              <p>¡Prevenir hoy es vivir tranquilo mañana!</p>
 
-              </div>
+             </div>
              <a href="javascript:void(0);" onclick="sendCamaras()" class="stme-btn"> COTIZAR LA INSTALACIÓN O MANTENIMIENTO DE CÁMARAS DE SEGURIDAD (CCTV) </a>
              <!-- CÓDIGO CSS: El diseño del botón -->
              <style>
@@ -362,7 +378,78 @@ img{max-width:100%;height:auto;}
              </style>
              </div>
              
-               
+
+       <!-- SERVICIOS ELÉCTRICOS -->
+<div class="stme-card stme-elec">
+  <div class="stme-card-header">SERVICIOS ELÉCTRICOS PROFESIONALES</div>
+  <div class="stme-card-body">
+    <p>
+      Servicios Eléctricos ME: ¡Energía segura para tu hogar y negocio! ⚡🏠🏭
+    </p>
+    <p>¿Tienes fallas constantes, recibos altos o necesitas una instalación nueva? Ofrecemos soluciones eléctricas integrales en Xalapa con personal capacitado y equipo profesional. </p>
+    
+    <p><strong>Nuestras Especialidades:</strong> </p>
+    
+    <p>🔌 <strong>Instalaciones y Acometidas:</strong> </p>
+    <p><strong>Mufas y Centros de Carga:</strong> Instalación de mufas según normas de CFE y conexiones a 220V para equipos de alto consumo. </p>
+    <p><strong>Canalización y Cableado:</strong> Peinado de cables, tubería conduit y organización profesional de circuitos. </p>
+    <p><strong>Accesorios:</strong> Instalación y cambio de contactos, apagadores y luminarias. </p>
+    
+    <p>⚙️ <strong>Mantenimiento y Control:</strong> </p>
+    <p><strong>Motores Eléctricos:</strong> Mantenimiento preventivo y correctivo a motores de 110V y 220V. </p>
+    <p><strong>Protecciones:</strong> Cambio de pastillas termomagnéticas (breakers) dañadas y balanceo de cargas. </p>
+    
+    <p>📊 <strong>Ingeniería Residencial:</strong> </p>
+    <p><strong>Cálculos de Carga:</strong> Diagnóstico de potencia para evitar sobrecalentamientos y optimizar tu consumo de energía. </p>
+    
+    <div style="background-color: #fff3cd; border: 2px dashed #856404; padding: 15px; border-radius: 8px; margin: 15px 0;">
+      <p style="margin: 0; color: #856404; font-weight: bold; text-align: center;">
+        🎁 ¡PROMOCIÓN RELÁMPAGO! 🎁
+      </p>
+      <p style="margin: 5px 0 0; text-align: center;">
+        <strong>SÓLO $250 MXN</strong><br>
+        Visita para reparaciones básicas (cambio de un contacto, socket o revisión de corto simple). ¡Válido para domicilios y comercios!
+      </p>
+    </div>
+
+    <p><strong>¿Por qué elegirnos?</strong> </p>
+    <p>Porque priorizamos tu seguridad. Realizamos diagnósticos precisos para evitar incendios o daños en tus aparatos, siempre con precios justos y materiales de calidad. 🛡️⚡</p>
+  </div>
+</div>
+</div>
+             <a href="javascript:void(0);" onclick="sendElectricidad()" class="stme-btn"> COTIZAR SERVICIOS ELÉCTRICOS</a>
+             <!-- CÓDIGO CSS: El diseño del botón -->
+             <style>
+             .stme-btn {
+             display: inline-block;
+             background-color: #25D366; /* Color verde WhatsApp */
+             color: #ffffff !important;
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             font-weight: bold;
+             font-size: 16px;
+             padding: 15px 30px;
+             border-radius: 50px;
+             text-decoration: none;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+             transition: all 0.3s ease;
+             text-transform: uppercase;
+             border: none;
+             cursor: pointer;
+             }
+
+              .stme-btn:hover {
+              background-color: #128C7E; /* Verde más oscuro al pasar el mouse */
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+              transform: translateY(-3px); /* Pequeño brinco hacia arriba */
+               }
+             </style>
+             </div>
+             
+
+
+
+     
+     
      
         <!-- ELECTRICIDAD -->
         <div class="stme-card stme-elec">
