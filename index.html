@@ -37,10 +37,6 @@ function sendProduct(nombre, precio, imagen){
 
  
  function sendPaneles() {
-    // Referencia directa a tu número: 2282572895
-    const telefono = "522282572895";
-    
-    // Mensaje formateado para que el cliente rellene la información
     let mensaje = encodeURIComponent(
         "¡Hola! Solicito cotización para limpieza de paneles. ☀️\n\n" +
         "Mis datos para la cotización son:\n" +
@@ -50,7 +46,7 @@ function sendProduct(nombre, precio, imagen){
         "Quedo a la espera de su respuesta."
     );
 
-    window.open(`https://wa.me{telefono}?text=${mensaje}`, "_blank");
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
 
 
