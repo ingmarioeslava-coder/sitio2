@@ -940,6 +940,132 @@ img{max-width:100%;height:auto;}
     <div class="direccion-cargo">Dirección de Ingeniería y Proyectos</div>
 </div>
 
+<!-- ================= SECCIÓN DE TESTIMONIOS MEJORADA ================= -->
+<style>
+  /* --- ESTILOS PARA LA SECCIÓN --- */
+  #testimonios {
+    padding: 60px 20px;
+    background-color: #f9fbff; /* Un fondo muy sutil para que resalten las tarjetas */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  .titulo-testimonios {
+    color: #0b5cab;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  /* Contenedor Flexbox */
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Tarjeta de Testimonio */
+  .testimonial-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1 1 300px; /* Se ajusta solo: mínimo 300px, máximo lo que quepa */
+    max-width: 380px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 4px solid #0b5cab; /* Detalle de color abajo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(11, 92, 171, 0.15);
+  }
+
+  /* Imagen del Cliente */
+  .client-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #0b5cab;
+  }
+
+  /* Estrellas */
+  .stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  /* Texto del Testimonio */
+  .testimonial-text {
+    color: #555;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+  }
+
+  /* Nombre del Autor */
+  .testimonial-author {
+    color: #0b5cab;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: auto; /* Empuja el nombre al fondo */
+  }
+
+  /* Adaptación para celulares */
+  @media (max-width: 600px) {
+    .titulo-testimonios {
+      font-size: 1.8rem;
+    }
+    .testimonial-card {
+      padding: 20px;
+    }
+  }
+</style>
+
+<section id="testimonios" data-aos="fade-up">
+  <h2 class="titulo-testimonios">Experiencias de Clientes</h2>
+
+  <div class="testimonials-container">
+    
+    <!-- Testimonio 1 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me" alt="Juan Pérez" class="client-img">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">“Excelente servicio, muy profesionales. El trato fue impecable desde el primer contacto hasta el final del proyecto.”</p>
+      <span class="testimonial-author">Juan Pérez</span>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me" alt="María López" class="client-img">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">“Instalaron mis paneles solares y ahora pago casi nada de luz. Fue la mejor inversión para mi casa este año.”</p>
+      <span class="testimonial-author">María López</span>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me" alt="Carlos Ramírez" class="client-img">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">“Rápidos y confiables. Restablecieron mi servicio de luz en menos de dos horas cuando más lo necesitaba. 100% recomendados.”</p>
+      <span class="testimonial-author">Carlos Ramírez</span>
+    </div>
+
+  </div>
+</section>
+
+ 
 
 <!-- ================= TESTIMONIOS ================= -->
 <section class="section" id="testimonios" data-aos="fade-left">
