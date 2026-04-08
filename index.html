@@ -612,14 +612,14 @@ img{max-width:100%;height:auto;}
 </div>
 -->
  
-
 <!-- =============================================
-     ÁREA DE GALERÍA (DISEÑO 3 EN 3 CON MARCO VERDE)
+     ÁREA DE GALERÍA (BUCLE INFINITO DE 3 EN 3)
      ============================================= -->
 <section class="section" id="galeria">
     <h2 style="color:#0b5cab; text-align:center; font-family: sans-serif; margin-bottom: 20px;">Galería</h2>
     
     <div class="gallery-container">
+        <!-- Botón Atrás (Siempre visible) -->
         <button class="gallery-btn" id="prev">❮</button>
         
         <div class="gallery-viewport">
@@ -636,6 +636,7 @@ img{max-width:100%;height:auto;}
             </div>
         </div>
 
+        <!-- Botón Siguiente (Siempre visible) -->
         <button class="gallery-btn" id="next">❯</button>
     </div>
 </section>
@@ -653,37 +654,36 @@ img{max-width:100%;height:auto;}
         max-width: 1100px;
         margin: auto;
         gap: 10px;
+        padding: 20px 0;
     }
 
     .gallery-viewport {
-        overflow: hidden; /* Oculta las fotos que sobran */
+        overflow: hidden;
         width: 100%;
     }
 
     .gallery-track {
         display: flex;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 15px;
     }
 
     .gallery-track img {
-        /* Calcula el ancho para que quepan exactamente 3 */
         min-width: calc((100% - 30px) / 3); 
         height: 250px;
         object-fit: cover;
         border-radius: 12px;
-        border: 4px solid #e8f5e9; /* Marco verde muy claro */
+        border: 4px solid #e8f5e9; /* Marco verde claro */
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .gallery-track img:hover {
-        border-color: #81c784; /* Verde más vivo al pasar el mouse */
+        border-color: #81c784; /* Verde activo */
         transform: scale(1.02);
     }
 
-    /* Botones Modernos */
     .gallery-btn {
         background: #0b5cab;
         color: white;
@@ -694,6 +694,9 @@ img{max-width:100%;height:auto;}
         border-radius: 50%;
         font-size: 1.2rem;
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: background 0.3s;
     }
 
@@ -716,11 +719,10 @@ img{max-width:100%;height:auto;}
         max-width: 85%;
         max-height: 80%;
         border-radius: 10px;
-        border: 4px solid #81c784; /* Marco verde en la foto ampliada */
-        box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        border: 4px solid #81c784;
     }
 
-    /* Adaptación a Móviles (1 sola foto a la vez) */
+    /* Responsive celular */
     @media (max-width: 768px) {
         .gallery-track img { min-width: 100%; }
     }
@@ -731,24 +733,28 @@ img{max-width:100%;height:auto;}
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('prev');
     let currentIndex = 0;
+    const totalSlides = 3; // 9 fotos entre 3 fotos por vista = 3 grupos
 
-    // Lógica para mover de 3 en 3 (considerando 9 fotos = 3 saltos)
     nextBtn.addEventListener('click', () => {
-        if (currentIndex < 2) { 
+        if (currentIndex < totalSlides - 1) { 
             currentIndex++;
-            updateSlide();
+        } else {
+            currentIndex = 0; // Regresa al inicio
         }
+        updateSlide();
     });
 
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            updateSlide();
+        } else {
+            currentIndex = totalSlides - 1; // Salta al final
         }
+        updateSlide();
     });
 
     function updateSlide() {
-        // Multiplicamos por 100% para desplazar el grupo completo
+        // Desplazamiento exacto por grupo
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
@@ -758,21 +764,18 @@ img{max-width:100%;height:auto;}
         const img = document.getElementById('lb-img');
         img.src = src;
         lb.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Pausa el scroll
+        document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Activa el scroll
+        document.body.style.overflow = 'auto';
     }
 </script>
 <!-- =============================================
      FIN DEL ÁREA DE GALERÍA
      ============================================= -->
 
-
-
- 
 
 <!-- ================= PRODUCTOS ================= -->
 <section class="section" id="Productos">
