@@ -35,19 +35,22 @@ function sendProduct(nombre, precio, imagen){
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
 
- function sendPaneles(){
+ 
+ function sendPaneles() {
+    // Referencia directa a tu número: 2282572895
+    const telefono = "522282572895";
     
-    // Plantilla con tus datos de contacto y preguntas para el cliente
-    let mensaje = 
-        `¡Hola! Gracias por contactar a tu servicio de paneles. ☀️%0A` +
-        `Me interesa el servicio: *%0A` +
-        `Para darte el mejor precio, por favor confírmanos:%0A` +
-        `1. ¿Cuántos paneles tienes en total?%0A` +
-        `2. ¿En qué zona se encuentra tu instalación?%0A` +
-        `3. ¿A qué altura están?%0A%0A` +        `¡Gracias por cuidar tu energía!`;
+    // Mensaje formateado para que el cliente rellene la información
+    let mensaje = encodeURIComponent(
+        "¡Hola! Solicito cotización para limpieza de paneles. ☀️\n\n" +
+        "Mis datos para la cotización son:\n" +
+        "- Cantidad de paneles: [ Escribe aquí ]\n" +
+        "- Ubicación/Zona: [ Escribe aquí ]\n" +
+        "- Altura (Pisos): [ Escribe aquí ]\n\n" +
+        "Quedo a la espera de su respuesta."
+    );
 
-    // Abre el chat directamente a tu número
-    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
+    window.open(`https://wa.me{telefono}?text=${mensaje}`, "_blank");
 }
 
 
@@ -303,10 +306,11 @@ img{max-width:100%;height:auto;}
                  temprano por la mañana (antes de las 10:00 AM) o por la tarde (después de las 5:30 PM). Esto evita el choque térmico que 
                  puede estrellar el cristal si se aplica agua fría mientras el panel está caliente por el sol.</p>
             </div>
-            <a href="https://wa.me/522282572895?text=${¡Hola! Gracias por contactar a tu servicio de paneles.}" class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
-            <a href="javascript:void(0);" onclick="sendPaneles()" class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
-
-
+            <a href="https://wa.me/522282572895?text=¡Hola! Gracias por contactar a tu servicio de paneles." class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
+            
+             <a href="javascript:void(0);" onclick="sendPaneles()" class="stme-btn">
+   COTIZAR PANELES, SERVICIO DE LIMPIEZA
+</a>
 
 
 
