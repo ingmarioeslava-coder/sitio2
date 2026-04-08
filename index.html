@@ -92,7 +92,20 @@ function sendElectricidad() {
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
 
+function sendMantenimientoGeneral() {
+    let mensaje = encodeURIComponent(
+        "¡Hola! Solicito información para Mantenimiento General Residencial/Comercial. 🛠️🏠\n\n" +
+        "Detalles de mi solicitud:\n" +
+        "- Servicio requerido: [ Ej: Plomería / Albañilería / Pintura / Impermeabilización ]\n" +
+        "- ¿Aplica para la Promo de $300 (Reparación básica)?: [ SI / NO ]\n" +
+        "- Descripción del trabajo: [ Escribe aquí qué falla o qué necesitas arreglar ]\n" +
+        "- Zona de Xalapa: [ Escribe aquí tu colonia/ubicación ]\n\n" +
+        "Quedo a la espera de su respuesta para confirmar el horario de la visita técnica."
+    );
 
+    // Abre el chat de WhatsApp con tu número registrado
+    window.open(`https://wa.me{mensaje}`, "_blank");
+}
  
 </script>
 
@@ -440,25 +453,18 @@ img{max-width:100%;height:auto;}
              </div>
           
             <!-- MANTENIMIENTO GENERAL -->
-<div class="stme-card stme-mant">
-  <div class="stme-card-header">MANTENIMIENTO INTEGRAL (HOGAR Y COMERCIO)</div>
-  <div class="stme-card-body">
-    <p>
-      Soluciones ME: ¡Mantenemos tus espacios en perfecto estado! 🏠🛠️✨
-    </p>
+        <div class="stme-card stme-mant">
+        <div class="stme-card-header">MANTENIMIENTO INTEGRAL (HOGAR Y COMERCIO)</div>
+       <div class="stme-card-body">
+    <p>Soluciones ME: ¡Mantenemos tus espacios en perfecto estado! 🏠🛠️✨</p>
     <p>¿Goteras, una fuga persistente o esa pared que necesita retoque? Resolvemos los detalles de tu hogar o negocio en Xalapa con rapidez y limpieza.</p>
-    
     <p><strong>Nuestras Especialidades:</strong> </p>
-    
     <p>💧 <strong>Plomería y Fontanería:</strong> </p>
     <p>Reparación de fugas, instalación de tinacos, cambio de mezcladoras, mantenimiento de WC y limpieza de tuberías tapadas. </p>
-    
     <p>🧱 <strong>Albañilería y Acabados:</strong> </p>
     <p>Resane de grietas, aplicación de impermeabilizante, pegado de loseta, detalles de pintura y acabados en muros. </p>
-    
     <p>🔨 <strong>Carpintería y Herrería Básica:</strong> </p>
     <p>Ajuste de puertas, cambio de chapas, bisagras y soldadura menor para protecciones o portones. </p>
-
     <!-- PROMOCIÓN DESTACADA -->
     <div style="background-color: #e1f5fe; border: 2px solid #0288d1; padding: 15px; border-radius: 8px; margin: 15px 0;">
       <p style="margin: 0; color: #01579b; font-weight: bold; text-align: center;">
@@ -471,9 +477,10 @@ img{max-width:100%;height:auto;}
 
     <p><strong>Confianza y Calidad:</strong> </p>
     <p>Trabajos garantizados, personal de confianza y presupuestos sin compromiso. ¡Dejamos todo limpio al terminar! 🧹🛡️</p>
-  </div>
+  
+       </div>
 
-             <a href="javascript:void(0);" onclick="sendElectricidad()" class="stme-btn"> COTIZAR SERVICIOS ELÉCTRICOS</a>
+             <a href="javascript:void(0);" onclick="sendMantenimientoGeneral()" class="stme-btn"> COTIZAR MANTENIMIENTO GENERAL</a>
              <!-- CÓDIGO CSS: El diseño del botón -->
              <style>
              .stme-btn {
@@ -501,23 +508,9 @@ img{max-width:100%;height:auto;}
              </style>
              </div>
      
-
-
-     
-     
-        <!-- ELECTRICIDAD -->
-        <div class="stme-card stme-elec">
-            <div class="stme-card-header">⚡ ELECTRICIDAD LIGERA</div>
-            <div class="stme-card-body">
-                <p>Reparaciones rápidas: contactos, apagadores y fallas menores.</p>
-                <div class="stme-price" style="background:#000; color:#f1c40f; text-align:center;">PROMOCIÓN: $350 MXN</div>
-                <ul class="stme-list">
-                    <li>Sustitución de pastillas</li>
-                    <li>Instalación de sockets</li>
-                </ul>
-            </div>
-            <a href="https://wa.me" class="stme-btn">PEDIR TÉCNICO</a>
-        </div>
+   
+ 
+       
 
      
     </div>
