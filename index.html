@@ -23,7 +23,7 @@ function sendWhatsappMessage(){
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
 
-function sendPaneles(nombre, precio, imagen){
+function sendProduct(nombre, precio, imagen){
     let mensaje = 
         `Hola, me interesa el producto:%0A` +
         `*${nombre}*%0A` +
@@ -33,7 +33,7 @@ function sendPaneles(nombre, precio, imagen){
 
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
-function sendProduct(nombre, precio, imagen){
+function sendPaneles(nombre, precio, imagen){
     // Tu número con prefijo de México
     const miNumero = "522282572895";
     
@@ -307,7 +307,7 @@ img{max-width:100%;height:auto;}
                  puede estrellar el cristal si se aplica agua fría mientras el panel está caliente por el sol.</p>
             </div>
             <a href="https://wa.me" class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
-            <a href="#" class="float-btn" id="whats" onclick="sendPanele()">
+            <a href="#" class="float-btn" id="whats" onclick="sendPaneles()">
 
              <a href="https://wa.me!" class="stme-btn" target="_blank">
               COTIZAR PANELES, SERVICIO DE LIMPIEZA
