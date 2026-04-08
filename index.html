@@ -912,18 +912,118 @@ img{max-width:100%;height:auto;}
         </a> 
     </div> 
 </section>
- 
- 
- <!--TESTIMONIOS-->
-<section class="section" id="testimonios" data-aos="fade-left">
- <h2 style="color:#0b5cab">Experiencias de Clientes</h2>
- <div class="testimonials">
-  <div class="testimonial"><p>“Excelente servicio, muy profesionales.”</p><strong>- Juan Pérez</strong></div>
-<div class="testimonial"><p>“Instalaron mis paneles solares y ahora pago casi nada de luz.”</p><strong>- María López</strong></div>
-  <div class="testimonial"><p>“Rápidos y confiables, ya que necesitaba el servicio de manera urgente y me restablecieron mi servicio de luz en menos de dos horas. 100% recomendados.”</p><strong>- Carlos Ramírez</strong></div>
+
+<!-- SECCIÓN DE TESTIMONIOS -->
+<section class="section" id="testimonios">
+  <div class="container">
+    
+    <h2 class="section-title">Experiencias de Clientes</h2>
+    <p class="section-subtitle">Lo que dicen quienes ya confiaron en nuestro soporte técnico.</p>
+    
+    <div class="testimonials-grid">
+      <!-- Testimonio 1 -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Excelente servicio técnico. Repararon mi laptop en tiempo récord y quedó como nueva. Muy profesionales."</p>
+        <h4 class="client-name">Juan Pérez</h4>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Me encantó el mantenimiento preventivo de mi PC Gamer. Ya no se calienta nada y vuela en los juegos."</p>
+        <h4 class="client-name">María García</h4>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Honestidad y buen precio. Me explicaron todo el proceso de reparación. 100% recomendados."</p>
+        <h4 class="client-name">Carlos Ruiz</h4>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<style>
+/* Estilos de la Sección de Testimonios */
+#testimonios {
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #fcfcfc;
+}
+
+.section-title {
+  color: #0b5cab;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Cuadrícula Adaptable */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de Testimonio */
+.testimonial-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-top: 4px solid #0b5cab; /* Detalle de color en la parte superior */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.stars {
+  color: #ffcc00; /* Dorado para las estrellas */
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.client-name {
+  color: #0b5cab;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+/* Ajustes para Celulares */
+@media (max-width: 600px) {
+  .section-title { font-size: 1.8rem; }
+  .testimonial-card { padding: 25px 20px; }
+}
+</style>
+
+ 
 <!-- ================= UBICACION ================= -->
 <section class="section map" id="ubicacion" data-aos="fade-up">
  <h2 style="color:#0b5cab">Ubicación</h2>
