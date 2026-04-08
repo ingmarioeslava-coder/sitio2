@@ -588,12 +588,11 @@ img{max-width:100%;height:auto;}
 
  
 <!-- ================= GALERÍA ================= -->
-<section class="section" id="galeria">
+<!--
+ <section class="section" id="galeria">
  <h2 style="color:#0b5cab;text-align:center;">Galería</h2>
-
  <div class="gallery-container">
    <button class="gallery-btn" id="prev">&#10094;</button>
-
    <div class="gallery-track" id="galleryTrack">
      <img src="foto1.jpeg" onclick="openLightbox(this.src)">
      <img src="foto2.jpeg" onclick="openLightbox(this.src)">
@@ -603,18 +602,177 @@ img{max-width:100%;height:auto;}
        <img src="foto6.jpeg" onclick="openLightbox(this.src)">
        <img src="foto7.jpeg" onclick="openLightbox(this.src)">
        <img src="foto8.jpeg" onclick="openLightbox(this.src)">
+       <img src="foto9.jpeg" onclick="openLightbox(this.src)">
     </div>
-
    <button class="gallery-btn" id="next">&#10095;</button>
  </div>
 </section>
-
-<!-- lightbox -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
  <img id="lb-img">
 </div>
+-->
+ 
+
+<!-- =============================================
+     ÁREA DE GALERÍA (DISEÑO 3 EN 3 CON MARCO VERDE)
+     ============================================= -->
+<section class="section" id="galeria">
+    <h2 style="color:#0b5cab; text-align:center; font-family: sans-serif; margin-bottom: 20px;">Galería</h2>
+    
+    <div class="gallery-container">
+        <button class="gallery-btn" id="prev">❮</button>
+        
+        <div class="gallery-viewport">
+            <div class="gallery-track" id="galleryTrack">
+                <img src="foto1.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto2.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto3.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto4.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto5.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto6.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto7.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto8.jpeg" onclick="openLightbox(this.src)">
+                <img src="foto9.jpeg" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+
+        <button class="gallery-btn" id="next">❯</button>
+    </div>
+</section>
+
+<!-- Lightbox (Imagen Ampliada) -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lb-img" src="">
+</div>
+
+<style>
+    /* --- Estilos de la Galería --- */
+    .gallery-container {
+        display: flex;
+        align-items: center;
+        max-width: 1100px;
+        margin: auto;
+        gap: 10px;
+    }
+
+    .gallery-viewport {
+        overflow: hidden; /* Oculta las fotos que sobran */
+        width: 100%;
+    }
+
+    .gallery-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 15px;
+    }
+
+    .gallery-track img {
+        /* Calcula el ancho para que quepan exactamente 3 */
+        min-width: calc((100% - 30px) / 3); 
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 4px solid #e8f5e9; /* Marco verde muy claro */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery-track img:hover {
+        border-color: #81c784; /* Verde más vivo al pasar el mouse */
+        transform: scale(1.02);
+    }
+
+    /* Botones Modernos */
+    .gallery-btn {
+        background: #0b5cab;
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        transition: background 0.3s;
+    }
+
+    .gallery-btn:hover { background: #08437a; }
+
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        cursor: zoom-out;
+    }
+
+    .lightbox img {
+        max-width: 85%;
+        max-height: 80%;
+        border-radius: 10px;
+        border: 4px solid #81c784; /* Marco verde en la foto ampliada */
+        box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    }
+
+    /* Adaptación a Móviles (1 sola foto a la vez) */
+    @media (max-width: 768px) {
+        .gallery-track img { min-width: 100%; }
+    }
+</style>
+
+<script>
+    const track = document.getElementById('galleryTrack');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    let currentIndex = 0;
+
+    // Lógica para mover de 3 en 3 (considerando 9 fotos = 3 saltos)
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < 2) { 
+            currentIndex++;
+            updateSlide();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlide();
+        }
+    });
+
+    function updateSlide() {
+        // Multiplicamos por 100% para desplazar el grupo completo
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Funciones del Lightbox
+    function openLightbox(src) {
+        const lb = document.getElementById('lightbox');
+        const img = document.getElementById('lb-img');
+        img.src = src;
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Pausa el scroll
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Activa el scroll
+    }
+</script>
+<!-- =============================================
+     FIN DEL ÁREA DE GALERÍA
+     ============================================= -->
 
 
+
+ 
 
 <!-- ================= PRODUCTOS ================= -->
 <section class="section" id="Productos">
