@@ -62,6 +62,21 @@ function sendProduct(nombre, precio, imagen){
 
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
+
+ function sendSoporte() {
+    let mensaje = encodeURIComponent(
+        "¡Hola! Solicito una cotización para soporte técnico de equipos de cómputo/sistemas. \n\n" +
+        "Detalles del servicio:\n" +
+        "- Tipo de equipo (PC, Laptop, Servidor): [ Escribe aquí ]\n" +
+        "- Marca y modelo: [ Escribe aquí ]\n" +
+        "- Problema que presenta: [ Escribe aquí ]\n" +
+        "- Ubicación/Zona: [ Escribe aquí ]\n" +
+        "- Tipo de soporte: [ Presencial / Remoto ]\n\n" +
+        "Quedo a la espera de su pronta respuesta."
+    );
+
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
+}
  
 </script>
 
@@ -297,47 +312,29 @@ img{max-width:100%;height:auto;}
             <div class="stme-card-header">SOPORTE TÉCNICO EN TECNOLOGÍA</div>
             <div class="stme-card-body">
 
-             <p> Soporte Técnico ME: Tu Aliado Tecnológico Integral en Xalapa 🛠️💻📱
-¿Tu equipo falló en el peor momento? ¿Necesitas optimizar la tecnología de tu casa u oficina? En Soporte Técnico ME no solo reparamos aparatos, ¡te devolvemos la tranquilidad!
-Nos especializamos en soluciones reales para que tus dispositivos vuelvan a la vida con eficiencia y a precios justos.
-Nuestros servicios estrella:
-💻 Especialistas en Computadoras:
-Reparación integral de hardware y software.
-Cambio de pantallas rotas y teclados.
-Instalación de programas, paquetería de oficina y optimización de sistema (¡adiós a la lentitud!).
-📱 Telefonía Celular (Gama Media y Baja):
-Cambios de pantalla con acabados profesionales.
-Reparaciones técnicas para que tu celular siga siendo tu mejor herramienta.
-🔊 Audio y Sonido:
-Reparación de bocinas.
-Instalación y configuración de amplificadores para que disfrutes del mejor sonido en casa.
-🌐 Redes y Conectividad:
-Instalación de cableado estructurado.
-Configuración de redes WiFi para que el internet llegue a cada rincón.
-Puesta en marcha de equipos especializados.
-¿Por qué elegir Soporte Técnico ME?
-Porque entendemos que detrás de cada computadora o celular hay un trabajo, una tarea o un negocio que no puede detenerse. Ofrecemos diagnósticos honestos y mano de obra garantizada en la zona de Xalapa.
-✨ ¡No lo des por perdido, tráelo con los expertos!</p>
+             <p> Soporte Técnico ME: ¡Tu tecnología en las mejores manos! 🛠️💻📱 </p>
+ <p>¿Tu equipo está lento, se bloqueó o perdiste archivos importantes? En Soporte Técnico ME te ofrecemos soluciones integrales 
+  en Xalapa para que no detengas tu productividad. </p>
+    <p><strong>Nuestras Especialidades:</strong> </p>
 
-
-             
-               <p>¿Compraste tus cámaras de Seguridad y no sabes cómo instalarlas? ¿Tu sistema actual necesita una "manita de gato"? ¡Nosotros nos encargamos! 🛠️</p>
-                <p>En Soporte Técnico ME te ofrecemos precios justos y soluciones reales para tu hogar o negocio.</p>
-                <p>✅ NUESTROS COSTOS FIJOS (Zona Xalapa):</p>
-               <p><strong>INSTALACIÓN (Solo mano de obra): $300 MXN</strong> por cámara (incluye configuración al celular 📱).</p>
-               <p><strong>MANTENIMIENTO PREVENTIVO: $100 MXN</strong> por equipo (limpieza de lentes y revisión de cables).</p>
-               <p><strong>REACCOMODO DE CÁMARAS: $250 MXN</strong> por unidad (eliminamos puntos ciegos).</p>
-               <p><strong>REVISIÓN TÉCNICA / DIAGNÓSTICO: $150 MXN.</strong></p>
-
-             <p> <strong>Sabías que...</strong> Con el ritmo actual de nuestra capital, la seguridad se ha vuelto la mejor inversión para tu tranquilidad.</p>
-             <p> ✅<strong>Prevención real:</strong> Una cámara a la vista disuade a la delincuencia antes de que actúe.</p>
-             <p> ✅<strong> Paz mental:</strong> Revisa tu casa o negocio desde el celular 📱, sin importar dónde estés en la ciudad.</p>
-             <p> ✅<strong> Evidencia clara:</strong> Ante cualquier incidente, el video es tu prueba más fuerte.</p>
-             <p>No permitas que la inseguridad te quite el sueño. En Soporte Técnico ME protegemos lo que más quieres con soluciones al alcance de tu bolsillo.</p>
-             <p>¡Prevenir hoy es vivir tranquilo mañana!</p>
+  <p>💻 <strong>Computadoras y Laptops:<strong> </p>
+ <p><strong>Formateos y Reinicios de Fábrica:</strong> Dejamos tu equipo como nuevo, rápido y sin errores. </p>
+ <p><strong>Salvamento de Datos:<strong> Extracción de información de discos dañados o equipos que ya no encienden. 📂💾 </p>
+ <p><strong>Recuperaciones:<strong> Rescate de archivos borrados o particiones perdidas. </p>
+ </p><strong>Reparación de Hardware:<strong> Cambio de pantallas, teclados y mantenimiento físico. </p>
+ </p><strong>Software:<strong> Instalación de programas, paquetería (Office) y optimización de sistema. </p>
+ <p>📱 <strong>Celulares (Gama Media y Baja):<strong> </p>
+ <p>Cambio de pantallas y cristales. </p>
+ </p>Reinicios de sistema y desbloqueos. </p>
+ </p>Reparación de bocinas y centros de carga. </p>
+ <p>🌐 <strong>Redes: </p>
+ </p><strong>Cableado Estructurado:<strong> Instalación profesional de redes para casa u oficina. </p>
+ <p><strong>¿Por qué nosotros?<strong> </p>
+ <p>Porque en Soporte Técnico ME hablamos con la verdad: diagnósticos honestos, precios justos y la seguridad de que tu información está protegida. 🛡️</p>
+          
 
               </div>
-             <a href="javascript:void(0);" onclick="sendCamaras()" class="stme-btn"> COTIZAR LA INSTALACIÓN O MANTENIMIENTO DE CÁMARAS DE SEGURIDAD (CCTV) </a>
+             <a href="javascript:void(0);" onclick="sendSoporte()" class="stme-btn"> COTIZAR PARA SOPORTE TÉCNICO </a>
              <!-- CÓDIGO CSS: El diseño del botón -->
              <style>
              .stme-btn {
