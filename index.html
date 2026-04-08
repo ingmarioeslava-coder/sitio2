@@ -10,7 +10,8 @@
  
    
 <script>
-function sendWhatsappMessage(){
+
+ function sendWhatsappMessage(){
     let mensaje = 
         `Hola, estoy interesado en solicitar información sobre sus servicios:%0A` +
         `- Paneles solares%0A` +
@@ -33,24 +34,20 @@ function sendProduct(nombre, precio, imagen){
 
     window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
-function sendPaneles(nombre, precio, imagen){
-    // Tu número con prefijo de México
-    const miNumero = "522282572895";
+
+ function sendPaneles(){
     
     // Plantilla con tus datos de contacto y preguntas para el cliente
     let mensaje = 
         `¡Hola! Gracias por contactar a tu servicio de paneles. ☀️%0A` +
-        `Me interesa el servicio: *${nombre}*%0A` +
-        `Precio base: *${precio}*%0A%0A` +
+        `Me interesa el servicio: *%0A` +
         `Para darte el mejor precio, por favor confírmanos:%0A` +
         `1. ¿Cuántos paneles tienes en total?%0A` +
         `2. ¿En qué zona se encuentra tu instalación?%0A` +
-        `3. ¿A qué altura están?%0A%0A` +
-        `Imagen de referencia: ${imagen}%0A%0A` +
-        `¡Gracias por cuidar tu energía!`;
+        `3. ¿A qué altura están?%0A%0A` +        `¡Gracias por cuidar tu energía!`;
 
     // Abre el chat directamente a tu número
-    window.open(`https://wa.me{miNumero}?text=${mensaje}`, "_blank");
+    window.open(`https://wa.me/522282572895?text=${mensaje}`, "_blank");
 }
 
 
@@ -307,7 +304,7 @@ img{max-width:100%;height:auto;}
                  puede estrellar el cristal si se aplica agua fría mientras el panel está caliente por el sol.</p>
             </div>
             <a href="https://wa.me" class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
-            <a href="#" class="float-btn" id="whats" onclick="sendPaneles()">
+            <a href= onclick="sendPaneles()" class="stme-btn">COTIZAR PANELES, SERVICIO DE LIMPIEZA</a>
 
              <a href="https://wa.me!" class="stme-btn" target="_blank">
               COTIZAR PANELES, SERVICIO DE LIMPIEZA
