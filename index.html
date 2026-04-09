@@ -701,11 +701,21 @@ img{max-width:100%;height:auto;}
     const track = document.getElementById('galleryTrack');
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('prev');
+    
     let currentIndex = 0;
-    const totalSlides = 4; // 9 fotos entre 3 fotos por vista = 3 grupos
+
+    // Detectamos cuántas imágenes se ven según el tamaño de pantalla
+    function getSlidesPerView() {
+        return window.innerWidth <= 768 ? 1 : 3;
+    }
 
     nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalSlides - 1) { 
+        const perView = getSlidesPerView();
+        const totalImages = track.children.length;
+        // Calculamos cuántos "saltos" de 100% puede dar
+        const maxIndex = Math.ceil(totalImages / perView) - 1;
+
+        if (currentIndex < maxIndex) { 
             currentIndex++;
         } else {
             currentIndex = 0; // Regresa al inicio
@@ -714,20 +724,24 @@ img{max-width:100%;height:auto;}
     });
 
     prevBtn.addEventListener('click', () => {
+        const perView = getSlidesPerView();
+        const totalImages = track.children.length;
+        const maxIndex = Math.ceil(totalImages / perView) - 1;
+
         if (currentIndex > 0) {
             currentIndex--;
         } else {
-            currentIndex = totalSlides - 1; // Salta al final
+            currentIndex = maxIndex; // Salta al final
         }
         updateSlide();
     });
 
     function updateSlide() {
-        // Desplazamiento exacto por grupo
+        // El desplazamiento de 100% mueve exactamente el ancho del contenedor visible
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    // Funciones del Lightbox
+    // Funciones del Lightbox (Mantener igual)
     function openLightbox(src) {
         const lb = document.getElementById('lightbox');
         const img = document.getElementById('lb-img');
@@ -740,7 +754,14 @@ img{max-width:100%;height:auto;}
         document.getElementById('lightbox').style.display = 'none';
         document.body.style.overflow = 'auto';
     }
+
+    // Ajustar posición si el usuario cambia el tamaño de la ventana (PC a Móvil)
+    window.addEventListener('resize', () => {
+        currentIndex = 0;
+        updateSlide();
+    });
 </script>
+
 <!-- =============================================
      FIN DEL ÁREA DE GALERÍA
      ============================================= -->
